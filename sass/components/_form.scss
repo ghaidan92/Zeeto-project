@@ -1,0 +1,299 @@
+.form {
+
+    @include respond(tab-port) {
+        width: 100%;
+        margin-left: 2rem;
+    }
+    &__group:not(:last-child) {
+        margin-bottom: 2rem;
+    }
+
+    &__title-group {
+        margin-bottom: 3rem;
+        text-align: left;
+    }
+
+    &__heading {
+        font-size: 2.5rem;
+    }
+
+    &__heading-2 {
+        font-size: 1.8rem;
+        font-style: italic;
+        color: darkgray;
+    }
+
+    &__input {
+        font-size: 1.5rem;
+        font-family: inherit;
+        color: inherit;
+        padding: 1rem 2rem;
+        border-radius: 2px;
+        background-color: rgba(208, 220, 221, 0.5);
+        border: none;
+        border-bottom: 3px solid transparent;
+        width: 62%;
+        display: block;
+        transition: all .3s;
+        box-shadow: 0.9px -2px #e1dede;
+
+        &-2 {
+            width: 90%;
+        }
+
+        @include respond(tab-port) {
+            width: 100%;
+        }
+
+        &:focus {
+            outline: none;
+            box-shadow: 0 1rem 2rem rgba($color-black, .1);
+            border: 2px solid $color-button-edge2;
+            opacity: .5;
+        }
+
+        &:focus:invalid {
+            border: 2px solid $color-button-edge2;
+        }
+
+        &::-webkit-input-placeholder {
+            color: $color-grey-dark-2;
+        }
+    }
+
+
+    &__label {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-left: 2rem;
+        margin-top: .7rem;
+        display: block;
+        transition: all .3s;
+        opacity: 0;
+    }
+
+    &__options-group {
+        font-size: 1.5rem;
+        font-family: inherit;
+        color: inherit;
+        padding: 0.5rem 1rem;
+        border-radius: 2px;
+        background-color: rgba($color-white, .5);
+        border: none;
+        border-bottom: 3px solid transparent;
+        width: 88%;
+        display: flex;
+    }
+
+    &__sample {
+        margin-left: -1rem;
+        padding-top: 1.2rem;
+        display: inline-block;
+    }
+
+    &__gender-group {
+        display: flex;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    &__gender {
+        font-size: $default-font-size;
+    }
+
+    // &__input:placeholder-shown + &__label {
+    //     opacity: 0;
+    //     visibility: hidden;
+    //     // transform: translateY(-4rem);
+    // }
+
+    &__input-group {
+        display: flex;
+    }
+
+
+    &__radio-group {
+        width: 6%;
+        display: inline-block;
+        margin-left: 8rem;
+
+        @include respond(tab-port) {
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__radio-input {
+        display: none;
+    }
+
+    &__radio-label {
+        font-size: 1.4rem;
+        cursor: pointer;
+        position: relative;
+        padding-left: 2.5rem;
+        margin-top: 2.1rem;
+    }
+
+    &__radio-label-2 {
+        font-size: 1.4rem;
+        cursor: pointer;
+        position: relative;
+        left: -3.3rem;
+        margin-top: 2.1rem;
+    }
+
+    &__radio-button {
+        height: 2rem;
+        width: 2rem;
+        border: 5px solid #eee;
+        border-radius: 50%;
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        top: -.4rem;
+
+
+        &::after {
+            content: "";
+            display: block;
+            height: 1.3rem;
+            width: 1.3rem;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: $color-primary;
+            opacity: 0;
+            transition: opacity .2s;
+        }
+    }
+
+    &__radio-button-2 {
+        height: 2rem;
+        width: 2rem;
+        border: 5px solid $color-primary;
+        border-radius: 20%;
+        display: inline-block;
+        position: absolute;
+        left: -3rem;
+        top: -.4rem;
+
+        &::after {
+            content: "";
+            display: block;
+            height: 1.3rem;
+            width: 1.3rem;
+            border-radius: 20%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: $color-primary;
+            opacity: 0;
+            transition: opacity .2s;
+        }
+    }
+
+    &__radio-input:checked ~ &__radio-label &__radio-button::after {
+        opacity: 1;
+    }
+
+    &__radio-input:checked ~ &__radio-label-2 &__radio-button-2::after {
+        opacity: 1;
+    }
+
+    &__phone-group {
+    }
+}
+
+.picture {
+    font-size: 1.6rem;
+
+    &__paragraph {
+      width: 75%;
+      margin: 2rem auto 0;
+      line-height: 2.3rem;
+      text-align: center;
+    }
+
+    &__awesome {
+        text-transform: uppercase;
+        font-style: italic;
+    }
+
+    &__img-1 {
+        position: absolute;
+        width: 8rem;
+        margin: -13rem 0 0 28rem;
+    }
+
+    &__img-2 {
+        width: 31rem;
+        margin-bottom: -5rem;
+    }
+
+    @include respond(phone) {
+        display: none;
+    }
+
+    @include respond(tab-port) {
+        display: none;
+    }
+}
+
+select { 
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
+    -ms-appearance: none; 
+    appearance: none; 
+    outline: 0; 
+    background: rgba(231, 237, 238, 0.5); 
+    background-image: none;  
+    width: 100%; 
+    height: 100%; 
+    margin: 0; 
+    padding: 0 0 0 .5em; 
+    color: #fff; 
+    cursor: pointer; 
+} 
+.select { 
+    margin-left: 1.5rem;
+    position: relative; 
+    display: block; 
+    width: 24.4em; 
+    height: 3em; 
+    line-height: 3; 
+    background: #2C3E50; 
+    overflow: hidden; 
+    border-radius: .25em;
+    
+} 
+select::-ms-expand { 
+    display: none; 
+}  
+.select::after { 
+    content: '\25BC'; 
+    position: absolute; 
+    top: 0; 
+    right: 0; 
+    bottom: 0; 
+    padding: 0 1em; 
+    background: $color-button-edge2; 
+    pointer-events: none; 
+} 
+.select:hover::after { 
+    color: #F39C12; 
+} 
+  
+// For diffrent browsers
+.select::after { 
+    -webkit-transition: .25s all ease; 
+    -o-transition: .25s all ease; 
+    transition: .25s all ease; 
+}
+
+// #name {
+//     width: 100%;
+// }
